@@ -1,0 +1,4 @@
+nltk  # tokenization
+numpy
+torch>=1.1.0
+tqdm  # progress bar
