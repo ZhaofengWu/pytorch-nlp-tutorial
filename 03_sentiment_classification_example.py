@@ -4,12 +4,14 @@ Note that in practice it is horrible style to put everything in one file.
 You probably want to use a GPU to run this file, as it can take many hours per epoch on CPUs,
 unless you are willing to use extreme hyperparameters.
 
-There are somethings that are usually done in real systems omitted in this example. For example:
+For brevity, we omit certain practices that are usually done in real systems. For example:
 (1) data persistence (e.g., with pickle) so we don't have to download and process every time;
 (2) dropout;
 (3) learning rate scheduling (see torch.optim.lr_scheduler);
 (4) model saving/loading;
-(5) choosing the best epoch based on development set performance.
+(5) early stopping;
+(6) choosing the best epoch based on development set performance;
+(7) hyperparameter tuning.
 
 [Here](https://github.com/pytorch/examples) are some more official examples provided by pytorch.
 """
@@ -28,7 +30,11 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm
 
+# Punctuation info for tokenization
+nltk.download('punkt')
+
 # Special tokens. It is important that they don't appear in the actual vocab, hence this weird look.
+# Sometimes you want bos and eos too.
 PAD = "@@PAD@@"
 UNK = "@@UNK@@"
 
