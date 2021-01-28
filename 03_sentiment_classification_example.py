@@ -218,7 +218,7 @@ class SequenceClassifier(nn.Module):
         # Here we directly output the raw scores without softmax normalization which would produce
         # a valid probability distribution. This is because:
         # (1) during training, pytorch provides a loss function "F.cross_entropy" that combines
-        # "softmax + F.nll_loss" in one step. See the `train` function below.
+        # "log_softmax + F.nll_loss" in one step. See the `train` function below.
         # (2) during evaluation, we usually only care about the class with the highest score, but
         # not the actual probablity distribution.
         # shape: (batch_size, n_labels)
