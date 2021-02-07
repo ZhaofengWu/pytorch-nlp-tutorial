@@ -2,7 +2,7 @@ This is a NumPy/PyTorch tutorial for [CSE 447/517 NLP class (Winter 2021)](https
 
 This code has been tested with Python 3.7 and 3.8. You can install the dependencies with `pip install -r requirements.txt`. PyTorch installation may be a bit more complicated with certain systems and/or CUDA drivers. Refer to the install instruction in [their official website](https://pytorch.org/) if you run into any issue.
 
-The notebook version of these files can be found at:
+The notebook version of these files (perhaps _slighly_ outdated) can be found at:
 1. [01_numpy_tutorial.ipynb](https://colab.research.google.com/drive/1SvJ8iDK-cBZIokHwjqkkNNPlfItdC6DU?usp=sharing)
 2. [02_pytorch_tutorial.ipynb](https://colab.research.google.com/drive/1kTlXIExwfHA_gAS4C2ALo7hS4KAW_lyb?usp=sharing)
 3. [03_sentiment_classification_example.ipynb](https://colab.research.google.com/drive/14GAMb7c6FbDnhWvqcliCZ8KYNvqdnQz7?usp=sharing)

@@ -230,6 +230,7 @@ def count_parameters(model):
 
 
 def train(model, dataloader, optimizer, device):
+    model.train()
     for texts, labels in tqdm(dataloader):
         texts, labels = texts.to(device), labels.to(device)
         output = model(texts)
@@ -240,6 +241,7 @@ def train(model, dataloader, optimizer, device):
 
 
 def evaluate(model, dataloader, device):
+    model.eval()
     count = correct = 0.0
     with torch.no_grad():
         for texts, labels in tqdm(dataloader):
